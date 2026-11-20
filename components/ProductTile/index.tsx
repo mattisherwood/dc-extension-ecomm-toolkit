@@ -16,7 +16,6 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import styled from '@emotion/styled'
 
 const StyledItem = styled(Box)`
-    cursor: pointer;
     border-radius: 4px;
     border: 1px solid #b4bef2;
     overflow: hidden;
@@ -223,9 +222,12 @@ const ProductTile = ({
                 </List>
             </Dialog>
             <StyledItem
-                width={size}
                 title={tooltip}
-                sx={removeProduct !== undefined ? { cursor: 'move' } : {}}
+                sx={
+                    removeProduct !== undefined
+                        ? { cursor: "grab", "&:active": { cursor: "grabbing" } }
+                        : { cursor: "pointer" }
+                }
             >
                 {actions()}
                 <div onClick={handleClick}>
