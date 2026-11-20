@@ -117,7 +117,7 @@ export const Card: FC<CardProps> = ({
     return (
         <div
             ref={ref}
-            style={{ ...style, opacity, height: size, width: size }}
+            style={{ ...style, opacity, width: size }}
             data-handler-id={handlerId}
         >
             <ProductTile
